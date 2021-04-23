@@ -66,6 +66,11 @@ showAddForm: function (){
 this.currentNote = null;
 }
 },
+mounted() {
+this.$http.get('notes').then(response => {
+this.notes = response.data;
+});
+}
 }
 </script>
 
